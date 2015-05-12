@@ -7,12 +7,13 @@ groups = u.groups.create([
   { name: "Todd Farm"},
   { name: "GA" }
 ])
-Grouping.create(group_id: groups[1].id, user_id: u2.id)
+Grouping.create(group_id: groups[0].id, user_id: u2.id)
 
 
 
 Task.destroy_all
 task = groups[0].tasks.create( { name: "Dishes"})
+
 groups[0].tasks.create( { name: "Recycling"})
 groups[0].tasks.create( { name: "Trash"})
 groups[0].tasks.create( { name: "Clean Downstairs Bathroom"})
