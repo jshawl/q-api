@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :groups do
-    resources :tasks
+    resources :tasks do
+      resources :events
+    end
   end
   post 'debug', to: 'debug#index'
   # The priority is based upon order of creation: first created -> highest priority.
