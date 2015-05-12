@@ -29,3 +29,7 @@ Lists all tasks that belong to one group.
 ### `get /groups/:group_id/tasks/:id`
 
 Lists a specific groups' task.
+
+### `get /groups/:group_id/tasks/:task_id/events`
+
+Lists the events for a given task.
