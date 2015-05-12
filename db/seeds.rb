@@ -7,9 +7,7 @@ groups = u.groups.create([
 ])
 
 Task.destroy_all
-Task.create([
-  { name: "Dishes", group_id: groups[1].id },
-  { name: "Recycling", group_id: groups[1].id },
-  { name: "Grade Homework", group_id: groups[0].id }
-])
+groups[0].tasks.create( { name: "Dishes"})
+groups[0].tasks.create( { name: "Recycling"})
+groups[1].tasks.create( { name: "Grade Homework"})
 

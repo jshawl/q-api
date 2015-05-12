@@ -8,3 +8,7 @@
     $ rake db:create
     $ rake db:migrate
     $ rails s
+
+## Public API
+
+### `post /users/sign_in`
