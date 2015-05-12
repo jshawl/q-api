@@ -1,4 +1,4 @@
-u = User.first
+u = User.create!(email:"j@j.com", authentication_token:"kUZY98qFsbDimxR14Qzn", password: "12345678")
 
 Group.destroy_all
 groups = u.groups.create([

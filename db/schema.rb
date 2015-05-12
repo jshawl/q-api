@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 20150507233018) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.integer "grouping_id"
-    t.string  "name"
+    t.string "name"
   end
 
   create_table "tasks", force: :cascade do |t|
