@@ -13,6 +13,19 @@ class GroupsController < ApplicationController
       render json: @group
     end
   end
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    render nothing: true
+  end
+  def update
+    @group = Group.find(params[:id])
+    if @group.update( group_params )
+      render json: @group
+    else
+      render json: { errors: @group.errors.full_messages }
+    end
+  end
   private
   def group_params
     params.permit(:name)

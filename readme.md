@@ -27,6 +27,11 @@ Required paramaters are `name`.
 
 Deletes a group.
 
+### `patch /groups/:id`
+
+Updates a group. 
+Required paramaters are `name`.
+
 ### `get /groups/:id`
 
 Returns information about a group identified by its id.
