@@ -18,6 +18,15 @@
 Lists the current users groups, where the current user is defined by
 an `authentication_token` query paramater in the url.
 
+### `post /groups`
+
+Creates a new group.
+Required paramaters are `name`.
+
+### `delete /groups/:id`
+
+Deletes a group.
+
 ### `get /groups/:id`
 
 Returns information about a group identified by its id.
