@@ -15,4 +15,9 @@ class TasksController < ApplicationController
       render json: { error: @task.errors }
     end
   end
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    render nothing: true
+  end
 end
