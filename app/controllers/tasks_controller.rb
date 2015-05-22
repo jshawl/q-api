@@ -7,4 +7,12 @@ class TasksController < ApplicationController
     @task = current_user.groups.find(params[:group_id]).tasks.find(params[:id])
     render json: @task
   end
+  def create
+    @task = current_user.groups.find(params[:group_id]).tasks.new(name: params[:name])
+    if @task.save
+      render json: @task
+    else
+      render json: { error: @task.errors }
+    end
+  end
 end

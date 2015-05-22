@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :group
   has_many :events
+  validates :name, presence: true
   def next_user
     last_user = self.events.last.user_id
     users = self.group.users.map do |user|
