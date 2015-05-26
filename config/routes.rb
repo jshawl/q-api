@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions" }
   resources :groups do
     resources :tasks do
-      resources :events
+      member do
+	get 'next_user'
+      end	
+      resources :events 
     end
   end
   root "welcome#index"

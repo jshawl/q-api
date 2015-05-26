@@ -20,4 +20,9 @@ class TasksController < ApplicationController
     @task.destroy
     render nothing: true
   end
+  def next_user
+    @task = Task.find(params[:id])
+    @user = @task.next_user
+    render json: @user
+  end
 end
