@@ -17,6 +17,6 @@ class Task < ActiveRecord::Base
       next_user = self.group.users[ next_index ]
     end
     data[:next_user] = next_user
-    return data
+    return data[:next_user]
   end
 end
