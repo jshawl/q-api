@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
   acts_as_token_authentication_handler_for User, fallback_to_devise: false
   before_action :require_authentication_token, :require_login
+  skip_before_filter :require_authentication_token, :require_login, if: :devise_controller?
   def current_user
     User.find_by(authentication_token: params[:authentication_token])
   end

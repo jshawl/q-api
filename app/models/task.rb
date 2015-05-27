@@ -13,8 +13,9 @@ class Task < ActiveRecord::Base
     if data[:index] + 1 == data[:length]
       next_user = self.group.users[0]
     else
-      next_index = self.group.users.index(@event.user) + 1
+      next_index = self.group.users.index(last_user) + 1
       next_user = self.group.users[ next_index ]
+
     end
     data[:next_user] = next_user
     return data[:next_user]

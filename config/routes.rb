@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   root "welcome#index"
   post 'debug', to: 'debug#index'
+  post 'push', to: 'push#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
