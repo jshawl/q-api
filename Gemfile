@@ -4,6 +4,8 @@ gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+gem 'hashids'
+gem 'figaro'
 gem 'houston'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
