@@ -16,6 +16,7 @@ class GroupsController < ApplicationController
       @group = current_user.groups.create group_params
     else
       @group = Group.find(decoded[0])
+      current_user.groupings.create( group: @group )
     end
     render json: @group
   end
