@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   resources :groups do
     resources :tasks do
       member do
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :events 
     end
   end
+  resources :tokens
   root "welcome#index"
   post 'debug', to: 'debug#index'
   post 'push', to: 'push#create'

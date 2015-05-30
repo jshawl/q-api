@@ -1,5 +1,6 @@
 User.destroy_all
 u = User.create!(email:"j@j.com", authentication_token:"kUZY98qFsbDimxR14Qzn", password: "12345678")
+u.tokens.create(device_token:"70e473f0a9bb2685b5bea5011e3033916faa17ad68c7817e14a86314947bfede")
 u2 = User.create!(email:"j@j2.com", authentication_token:"k", password: "12345678")
 
 Group.destroy_all
