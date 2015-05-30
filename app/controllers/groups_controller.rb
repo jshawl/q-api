@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
     render json: @group
   end
   def destroy
-    @group = Group.find(params[:id])
+    @group = Grouping.find_by( user_id: current_user.id, group_id: params[:id])
     @group.destroy
     render nothing: true
   end
