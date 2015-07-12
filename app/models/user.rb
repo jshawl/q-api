@@ -10,6 +10,14 @@ class User < ActiveRecord::Base
   has_many :groups, through: :groupings
   before_create :save_token
 
+   def as_json(options={})
+      super.as_json(options).merge({token: get_token})
+  end
+
+  def get_token
+    self.tokens && self.tokens.first
+  end 
+
   private
   def save_token
 
