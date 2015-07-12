@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def get_token
-    self.tokens && self.tokens.first
+    self.tokens && self.tokens.first.device_token
   end 
 
   private
