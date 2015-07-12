@@ -11,12 +11,8 @@ class User < ActiveRecord::Base
   before_create :save_token
 
    def as_json(options={})
-      super.as_json(options).merge({token: get_token})
+      super.as_json(options).merge({tokens: self.tokens})
   end
-
-  def get_token
-    self.tokens && self.tokens.first.device_token
-  end 
 
   private
   def save_token
